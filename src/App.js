@@ -23,7 +23,7 @@ class App extends Component {
   // Do not put in render!! 
   componentDidMount=()=>{
     const url = `https://api.openweathermap.org/data/2.5/weather?q=Vancouver&units=metric&appid=${process.env.REACT_APP_WEATHER_API}`
-    // console.log(url)
+    console.log(url)
     axios.get(url).then((response) => {
       this.setState({
         temp: response.data.main.temp,
@@ -31,7 +31,7 @@ class App extends Component {
         weather: response.data.decription,
         high: response.data.main.temp_max,
         low: response.data.main.temp_min,
-        icon: response.data.icon,
+        icon: response.data.weather[0].icon,
       })
     })
     var elems = document.querySelectorAll('.modal');
