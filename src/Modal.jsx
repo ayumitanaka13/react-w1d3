@@ -4,9 +4,6 @@ const Modal = ({icon, cityName, high, low, weather}) => {
 
     return (
         <>
-            <button data-target='modal1' className='btn modal-trigger'>
-                Modal
-            </button>
             <div id='modal1' className='modal'>
                 <div className='modal-content'>
                     <h4>{cityName}</h4>
